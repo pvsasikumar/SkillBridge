@@ -16,12 +16,12 @@ export function Modal({ open, onClose, title, children, size = 'md' }: ModalProp
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-on-surface/40 backdrop-blur-sm" onClick={onClose} />
-      <div className={cn('relative glass-card shadow-xl w-full animate-in fade-in zoom-in-95', sizes[size])}>
+      <div className="absolute inset-0 bg-on-surface/30 backdrop-blur-sm" onClick={onClose} />
+      <div className={cn('relative glass-card shadow-2xl w-full animate-scale-in', sizes[size])}>
         {title && (
-          <div className="flex items-center justify-between px-6 py-4 border-b border-outline-light">
-            <h2 className="text-lg font-semibold text-on-surface">{title}</h2>
-            <button onClick={onClose} className="p-1 rounded-lg hover:bg-surface-container text-outline hover:text-on-surface-variant transition-colors">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-outline-light/60">
+            <h2 className="text-lg font-bold text-on-surface">{title}</h2>
+            <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-surface-container text-outline hover:text-on-surface-variant transition-colors">
               <span className="material-symbols-outlined text-[18px]">close</span>
             </button>
           </div>

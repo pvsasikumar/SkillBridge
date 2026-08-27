@@ -11,10 +11,10 @@ interface BadgeProps {
 export function Badge({ children, variant = 'default', size = 'sm', className }: BadgeProps) {
   const variants = {
     default: 'bg-surface-container-high text-on-surface-variant',
-    primary: 'bg-primary-50 text-primary-700',
-    success: 'bg-success-50 text-success-700',
-    warning: 'bg-warning-50 text-warning-600',
-    danger: 'bg-danger-50 text-danger-600',
+    primary: 'bg-primary-50 text-primary-700 border border-primary-200/50',
+    success: 'bg-success-50 text-success-700 border border-success-400/20',
+    warning: 'bg-warning-50 text-warning-600 border border-warning-400/20',
+    danger: 'bg-danger-50 text-danger-600 border border-danger-400/20',
   };
 
   const sizes = {
@@ -23,7 +23,7 @@ export function Badge({ children, variant = 'default', size = 'sm', className }:
   };
 
   return (
-    <span className={cn('inline-flex items-center font-medium rounded-full', variants[variant], sizes[size], className)}>
+    <span className={cn('inline-flex items-center font-semibold rounded-full', variants[variant], sizes[size], className)}>
       {children}
     </span>
   );
@@ -46,5 +46,5 @@ export function DotIndicator({ status }: { status: CompetencyStatus }) {
     developing: 'bg-warning-500',
     'needs-attention': 'bg-danger-500',
   };
-  return <span className={cn('inline-block w-2 h-2 rounded-full', colors[status])} />;
+  return <span className={cn('inline-block w-2 h-2 rounded-full ring-2 ring-white', colors[status])} />;
 }

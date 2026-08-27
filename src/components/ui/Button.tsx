@@ -19,15 +19,15 @@ export function Button({
   disabled,
   ...props
 }: ButtonProps) {
-  const base = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer';
+  const base = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer';
 
   const variants = {
-    primary: 'bg-primary text-on-primary hover:bg-primary-600 active:bg-primary-700 shadow-sm focus-visible:outline-primary',
-    secondary: 'bg-primary-50 text-primary-700 hover:bg-primary-100 active:bg-primary-200 focus-visible:outline-primary-500',
-    outline: 'border border-outline-light text-on-surface bg-surface-container-lowest hover:bg-surface-container active:bg-surface-container-high focus-visible:outline-outline',
+    primary: 'bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 shadow-sm focus-visible:outline-primary-500',
+    secondary: 'bg-primary-50 text-primary-700 hover:bg-primary-100 active:bg-primary-200/80 focus-visible:outline-primary-500',
+    outline: 'border border-outline-light text-on-surface bg-white hover:bg-surface-container active:bg-surface-container-high focus-visible:outline-outline',
     ghost: 'text-on-surface-variant hover:bg-surface-container active:bg-surface-container-high focus-visible:outline-outline',
-    danger: 'bg-danger-500 text-on-primary hover:bg-danger-600 active:bg-danger-600 focus-visible:outline-danger-500',
-    gradient: 'gradient-btn shadow-sm hover:opacity-90 active:opacity-80 focus-visible:outline-primary',
+    danger: 'bg-danger-500 text-white hover:bg-danger-600 active:bg-danger-600 focus-visible:outline-danger-500',
+    gradient: 'gradient-btn shadow-sm hover:shadow-md active:opacity-90 focus-visible:outline-primary-500',
   };
 
   const sizes = {

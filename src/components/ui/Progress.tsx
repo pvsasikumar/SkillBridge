@@ -27,7 +27,7 @@ export function Progress({ value, max = 100, size = 'md', color = 'auto', showLa
     <div className={cn('w-full', className)}>
       {showLabel && (
         <div className="flex justify-between items-center mb-1.5">
-          <span className="text-sm font-medium text-on-surface-variant">{percentage}%</span>
+          <span className="text-sm font-semibold text-on-surface-variant">{percentage}%</span>
         </div>
       )}
       <div className={cn('w-full bg-surface-container-highest rounded-full overflow-hidden', sizes[size])}>

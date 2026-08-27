@@ -14,7 +14,7 @@ export function Input({ label, error, hint, icon, trailing, className, id, ...pr
   return (
     <div className="space-y-1.5">
       {label && (
-        <label htmlFor={inputId} className="block text-sm font-medium text-on-surface-variant">
+        <label htmlFor={inputId} className="block text-sm font-semibold text-on-surface-variant">
           {label}
         </label>
       )}
@@ -23,10 +23,12 @@ export function Input({ label, error, hint, icon, trailing, className, id, ...pr
         <input
           id={inputId}
           className={cn(
-            'w-full px-3.5 py-2.5 text-sm bg-surface-container-low border rounded-lg transition-colors',
+            'w-full px-3.5 py-2.5 text-sm bg-white border rounded-xl transition-all duration-200',
             'placeholder:text-outline',
-            error ? 'border-danger-400 focus:border-danger-500 focus:ring-danger-500/20' : 'border-outline-light focus:border-primary focus:ring-primary/20',
-            'focus:outline-none focus:ring-2',
+            error
+              ? 'border-danger-400 focus:border-danger-500 focus:ring-2 focus:ring-danger-500/20'
+              : 'border-outline-light focus:border-primary-500 focus:ring-2 focus:ring-primary-500/15',
+            'focus:outline-none',
             icon && 'pl-10',
             trailing && 'pr-10',
             className
@@ -39,7 +41,7 @@ export function Input({ label, error, hint, icon, trailing, className, id, ...pr
           </div>
         )}
       </div>
-      {error && <p className="text-sm text-danger-600">{error}</p>}
+      {error && <p className="text-sm text-danger-600 font-medium">{error}</p>}
       {hint && !error && <p className="text-sm text-on-surface-variant">{hint}</p>}
     </div>
   );
@@ -54,12 +56,14 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
 export function Select({ label, error, options, className, ...props }: SelectProps) {
   return (
     <div className="space-y-1.5">
-      {label && <label className="block text-sm font-medium text-on-surface-variant">{label}</label>}
+      {label && <label className="block text-sm font-semibold text-on-surface-variant">{label}</label>}
       <select
         className={cn(
-          'w-full px-3.5 py-2.5 text-sm bg-surface-container-low border rounded-lg transition-colors',
-          error ? 'border-danger-400' : 'border-outline-light focus:border-primary',
-          'focus:outline-none focus:ring-2 focus:ring-primary/20',
+          'w-full px-3.5 py-2.5 text-sm bg-white border rounded-xl transition-all duration-200',
+          error
+            ? 'border-danger-400 focus:border-danger-500 focus:ring-2 focus:ring-danger-500/20'
+            : 'border-outline-light focus:border-primary-500 focus:ring-2 focus:ring-primary-500/15',
+          'focus:outline-none',
           className
         )}
         {...props}
@@ -68,7 +72,7 @@ export function Select({ label, error, options, className, ...props }: SelectPro
           <option key={opt.value} value={opt.value}>{opt.label}</option>
         ))}
       </select>
-      {error && <p className="text-sm text-danger-600">{error}</p>}
+      {error && <p className="text-sm text-danger-600 font-medium">{error}</p>}
     </div>
   );
 }
@@ -81,17 +85,19 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
 export function Textarea({ label, error, className, ...props }: TextareaProps) {
   return (
     <div className="space-y-1.5">
-      {label && <label className="block text-sm font-medium text-on-surface-variant">{label}</label>}
+      {label && <label className="block text-sm font-semibold text-on-surface-variant">{label}</label>}
       <textarea
         className={cn(
-          'w-full px-3.5 py-2.5 text-sm bg-surface-container-low border rounded-lg transition-colors resize-none',
-          error ? 'border-danger-400' : 'border-outline-light focus:border-primary',
-          'focus:outline-none focus:ring-2 focus:ring-primary/20',
+          'w-full px-3.5 py-2.5 text-sm bg-white border rounded-xl transition-all duration-200 resize-none',
+          error
+            ? 'border-danger-400 focus:border-danger-500 focus:ring-2 focus:ring-danger-500/20'
+            : 'border-outline-light focus:border-primary-500 focus:ring-2 focus:ring-primary-500/15',
+          'focus:outline-none',
           className
         )}
         {...props}
       />
-      {error && <p className="text-sm text-danger-600">{error}</p>}
+      {error && <p className="text-sm text-danger-600 font-medium">{error}</p>}
     </div>
   );
 }

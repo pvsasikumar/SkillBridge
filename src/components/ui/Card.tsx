@@ -16,7 +16,7 @@ export function Card({ children, className, hover, padding = 'md', onClick }: Ca
       onClick={onClick}
       className={cn(
         'glass-card',
-        hover && 'hover:shadow-lg hover:border-primary-200 transition-all duration-200 cursor-pointer',
+        hover && 'hover:shadow-lg hover:border-primary-200/60 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer',
         paddings[padding],
         onClick && 'cursor-pointer',
         className
@@ -38,7 +38,7 @@ export function CardHeader({ title, subtitle, action, className }: CardHeaderPro
   return (
     <div className={cn('flex items-start justify-between mb-4', className)}>
       <div>
-        <h3 className="text-base font-semibold text-on-surface">{title}</h3>
+        <h3 className="text-base font-bold text-on-surface">{title}</h3>
         {subtitle && <p className="text-sm text-on-surface-variant mt-0.5">{subtitle}</p>}
       </div>
       {action}
